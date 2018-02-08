@@ -60,6 +60,10 @@ network.port_range.set = 6790-6999
 #
 #network.port_random.set = no
 
+# Number of sockets to simultaneously keep open
+#
+#network.max_open_sockets.set = 65023
+
 # Start opening port for scgi to enable the rTorrent XMLRPC interface
 #
 network.scgi.open_port = 127.0.0.1:5000
@@ -102,6 +106,44 @@ protocol.encryption.set = allow_incoming,enable_retry,prefer_plaintext
 #
 #protocol.pex.set = yes
 
-# Set downlad list layout style. ("full", "compact")
+# Set download list layout style. ("full", "compact")
 #
 #ui.torrent_list.layout.set = "full"
+
+#
+# Do not modify the following parameters unless you know what you're doing.
+#
+
+# Hash read-ahead controls how many MB to request the kernel to read
+# ahead. If the value is too low the disk may not be fully utilized,
+# while if too high the kernel might not be able to keep the read
+# pages in memory thus end up trashing.
+#
+#system.hash.read_ahead.set =  10
+
+# Interval between attempts to check the hash, in milliseconds.
+#
+#system.hash.interval.set = 100
+
+# Number of attempts to check the hash while using the mincore status,
+# before forcing. Overworked systems might need lower values to get a
+# decent hash checking rate.
+#
+#system.hash.max_tries.set = 10
+
+# If you need log, uncomment (remove #) from all lines below
+#
+#log.open_file = "rtorrent", ~/log/rtorrent.log
+#log.open_file = "tracker", ~/log/tracker.log
+#log.open_file = "storage", ~/log/storage.log
+#
+#log.add_output = "info", "rtorrent"
+#log.add_output = "critical", "rtorrent"
+#log.add_output = "error", "rtorrent"
+#log.add_output = "warn", "rtorrent"
+#log.add_output = "notice", "rtorrent"
+#log.add_output = "debug", "rtorrent"
+#log.add_output = "dht_debug", "tracker"
+#log.add_output = "tracker_debug", "tracker"
+#
+#log.add_output = "storage_debug", "storage"
