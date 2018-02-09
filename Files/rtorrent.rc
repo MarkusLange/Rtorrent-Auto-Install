@@ -64,6 +64,10 @@ network.port_range.set = 6790-6999
 #
 #network.max_open_sockets.set = 65023
 
+# Disable certificate verification
+#
+#network.http.ssl_verify_peer.set=0
+
 # Start opening port for scgi to enable the rTorrent XMLRPC interface
 #
 network.scgi.open_port = 127.0.0.1:5000
