@@ -9,7 +9,7 @@
 
 # Same as above but for seeding completed torrents (-1 = same as downloading)
 #
-#throttle.min_peers.seed.set = 10
+throttle.min_peers.seed.set = 0
 #throttle.max_peers.seed.set = 50
 
 # Maximum number of simultanious uploads per torrent.
