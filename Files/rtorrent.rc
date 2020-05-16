@@ -2,6 +2,10 @@
 # ~/.rtorrent.rc and enable/modify the options as needed. Remember to
 # uncomment the options you wish to enable.
 
+# Set deamon Mode for rtorrent
+#
+system.daemon.set = true
+
 # Maximum and minimum number of peers to connect to per torrent.
 #
 #throttle.min_peers.normal.set = 40
@@ -67,6 +71,14 @@ network.port_range.set = 6790-6999
 # Number of sockets to simultaneously keep open
 #
 #network.max_open_sockets.set = 65023
+
+# Disable certificate verification
+#
+network.http.ssl_verify_peer.set = 0
+
+# directory for ssl certificates on self signed trackers
+#
+network.http.capath.set = /etc/ssl/certs
 
 # Start opening port for scgi to enable the rTorrent XMLRPC interface
 #
